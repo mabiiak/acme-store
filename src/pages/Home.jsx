@@ -4,9 +4,10 @@ import Header from '../components/Header';
 import generateName from '../services/utils';
 import heart from '../images/heart.png';
 import cart from '../images/cart.png';
+import { SectionProducts } from '../styles/Card'; 
 
 function Home() {
-  const { allPictures,setAllPictures, namesProducts, setNames } = useContext(Context);
+  const { allPictures, setAllPictures, namesProducts, setNames } = useContext(Context);
   
   useEffect(() => {
     setAllPictures([]);
@@ -21,24 +22,26 @@ function Home() {
   }, []);
   
   return(
-    <>
+    <div className='home'>
       <Header />
+      <SectionProducts>
       {
         allPictures.map((picture, index) => (
-          <div key={ index }>
+          <div key={ index } className='card'>
             <img src={picture} alt="imagem do produto"/>
-            <p>{ namesProducts[index] }</p>
             <div>
-              <p>R$</p>
+            <h4>{ namesProducts[index] }</h4>
               <div>
-                <img src={ heart } alt="heart icon" onClick={ () => { console.log('Gostei!!!'); } } />
-                <img src={ cart } alt="heart icon" onClick={ () => { console.log('Gostei!!!'); } } />
+                <p>R$00,00</p>
+                <img src={ heart } alt="heart icon" className='button' onClick={ () => { console.log('Gostei!!!'); } } />
+                <img src={ cart } alt="heart icon" className='button' onClick={ () => { console.log('Gostei!!!'); } } />
               </div>
             </div>
           </div>
         ))
       }
-    </>
+      </SectionProducts>
+    </div>
   )
 }
 
