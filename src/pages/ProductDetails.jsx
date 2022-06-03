@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 
-function Home() {
+function ProductDetails() {
   return(
     <>
       <Header />
@@ -9,4 +9,4 @@ function Home() {
   )
 }
 
-export default Home;
+export default ProductDetails;
