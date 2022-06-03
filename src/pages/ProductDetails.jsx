@@ -5,6 +5,7 @@ function ProductDetails() {
   return(
     <>
       <Header />
+      <p>produto</p>
     </>
   )
 }
