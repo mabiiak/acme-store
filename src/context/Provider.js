@@ -3,10 +3,11 @@ import React, { createContext, useState } from 'react';
 export const Context = createContext();
 
 function Provider({ children }) {
-  const [randomPic, setRandomPic] = useState('');
+  const [allPictures,setAllPictures] = useState([]);
+  const [namesProducts, setNames] = useState([]);
 
   const allState = {
-    randomPic, setRandomPic
+    allPictures,setAllPictures, namesProducts, setNames
   };
 
   return (
