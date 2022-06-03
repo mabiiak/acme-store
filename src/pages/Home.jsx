@@ -2,6 +2,8 @@ import React, { useEffect, useContext } from 'react';
 import { Context } from '../context/Provider'
 import Header from '../components/Header';
 import generateName from '../services/utils';
+import heart from '../images/heart.png';
+import cart from '../images/cart.png';
 
 function Home() {
   const { allPictures,setAllPictures, namesProducts, setNames } = useContext(Context);
@@ -26,6 +28,13 @@ function Home() {
           <div key={ index }>
             <img src={picture} alt="imagem do produto"/>
             <p>{ namesProducts[index] }</p>
+            <div>
+              <p>R$</p>
+              <div>
+                <img src={ heart } alt="heart icon" onClick={ () => { console.log('Gostei!!!'); } } />
+                <img src={ cart } alt="heart icon" onClick={ () => { console.log('Gostei!!!'); } } />
+              </div>
+            </div>
           </div>
         ))
       }

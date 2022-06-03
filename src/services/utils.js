@@ -35,7 +35,6 @@ function generateName() {
 
   // Reference Set ----> https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Set
 
-  console.log(names);
   return names;
 }
 
