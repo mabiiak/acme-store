@@ -5,7 +5,7 @@ import Card from '../components/AllCards';
 import generateName from '../services/utils';
 
 function Home() {
-  const { setAllPictures, setNames, listProducts } = useContext(Context);
+  const { setAllPictures, setNames, listProducts} = useContext(Context);
   
   useEffect(() => {
     if(listProducts.length === 0) {
@@ -13,12 +13,12 @@ function Home() {
       for(let index = 0; index < 10; index += 1) {
         fetch('https://picsum.photos/200')
           .then(function(response) {
-            return setAllPictures((oldPictures) => [...oldPictures, response.url])
+            return setAllPictures((oldPictures) => [...oldPictures, response.url]);
           })
           .catch(function(err) { console.log('Fetch Error', err) });
       }
       setNames(generateName());
-  }
+    }
   }, []);
   
   return(
