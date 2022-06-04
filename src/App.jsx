@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={ <Home /> } />
         <Route exact path="/cart" element={ <Cart /> } />
-        <Route path="/product" element={ <ProductDetails /> } />
+        <Route path="/product/:id" element={ <ProductDetails /> } />
       </Routes>
     </HashRouter>
   );

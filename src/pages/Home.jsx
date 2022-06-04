@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import { Context } from '../context/Provider'
 import Header from '../components/Header';
-import Card from '../components/Card';
+import Card from '../components/AllCards';
 import generateName from '../services/utils';
 
 function Home() {
