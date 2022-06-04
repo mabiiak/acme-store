@@ -11,10 +11,15 @@ export const SectionProducts = styled.section`
     background-color: #EFEDED;
     border-radius: 10px;
     box-shadow: 0 5px 5px grey;
+    height: 350px;
     margin: 9px;
     padding: 7px;
     width: 22%;
-    height: 365px;
+
+    a {
+      color: black;
+      text-decoration: none;
+    }
 
     img {
       padding: 5px;
@@ -22,37 +27,34 @@ export const SectionProducts = styled.section`
     }
 
     div {
+      bottom: -20px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      position: relative;
-      bottom: -20px;
       margin-top: 0;
+      position: relative;
 
-      h4 {
-        margin-left: 5px;
+      h4, p {
         margin-bottom: 0;
+        margin-left: 5px;
       }
 
-      div {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-end;
-        
-        p {
-          margin-left: 5px;
-          width: 50%;
-          height: 40px;
-        }
-        
-        .button {
-          align-items: flex-end;
-          margin-left: 5px;
-          padding: 5px;
-          width: 40px;
-          height: 40px;
-        }
+      p {
+        bottom: -34px;
+        position: relative;
       }
-  }
+    }
+
+    .buttons {
+      bottom: -10px;
+      display: flex;
+      flex-direction: row;
+      height: 50px;
+      margin-left: 5px;
+      padding: 5px;
+      position: relative;
+      right: -125px;
+      width: 40px;
+    }
   }
 `
