@@ -27,8 +27,11 @@ Inicialize o projeto
 `npm run test`
 
 ## Links
-API utilizada [Lorem Picsum](https://picsum.photos/)
-
-
+API utilizada para gerar as imagens: [Lorem Picsum](https://picsum.photos/)
 [Licença de uso](https://github.com/DMarby/picsum-photos/blob/main/LICENSE.md)
+
+
+API utilizada para gerar os textos: [Dicio API](https://github.com/ThiagoNelsi/dicio-api)
+
+
 

@@ -6,7 +6,7 @@ function randomNumber(max) {
   return Math.floor(Math.random() * (newMax));
 }
 
-function getVerbs() {
+export function getVerbs() {
   const verb = verbs[randomNumber(verbs.length)]
   return verb;
 }
@@ -19,7 +19,7 @@ function getAdjectives() {
 function generateName() {
   const createVerbs = [];
   const createAdjectives = [];
-  const names = [];
+  const fullName = [];
 
   for(let index = 0; index < 15; index += 1) {
     createVerbs.push(getVerbs());
@@ -30,12 +30,12 @@ function generateName() {
   const adjectives = [...new Set(createAdjectives)];
 
   for(let index = 0; index < 10; index += 1) {
-    names.push(`${verbs[index]} ${adjectives[index]}`)
+    fullName.push(`${verbs[index]} ${adjectives[index]}`)
   }
 
   // Reference Set ----> https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Set
 
-  return names;
+  return fullName;
 }
 
 export default generateName;

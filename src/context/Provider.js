@@ -5,7 +5,7 @@ export const Context = createContext();
 function Provider({ children }) {
   const [allPictures,setAllPictures] = useState([]);
   const [namesProducts, setNames] = useState([]);
-
+  const [describe, setDescribe] = useState([]);
   let listProducts = [];
 
   allPictures.map((picture, index) => {
@@ -13,9 +13,10 @@ function Provider({ children }) {
       ...listProducts,
       {
         name: namesProducts[index],
+        id: namesProducts[index].split(' ')[0],
         url: picture,
         // price,
-        // description,
+        // description: describe[index][0],
       }
     ]
   });
@@ -26,6 +27,8 @@ function Provider({ children }) {
     namesProducts,
     setNames,
     listProducts,
+    describe,
+    setDescribe,
   };
 
   return (
