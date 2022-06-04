@@ -37,7 +37,7 @@ export const SectionProducts = styled.section`
       div {
         display: flex;
         flex-direction: row;
-        align-items: center;
+        align-items: flex-end;
         
         p {
           margin-left: 5px;
@@ -51,7 +51,7 @@ export const SectionProducts = styled.section`
           padding: 5px;
           width: 40px;
           height: 40px;
-        }   
+        }
       }
   }
   }

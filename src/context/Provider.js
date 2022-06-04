@@ -6,8 +6,26 @@ function Provider({ children }) {
   const [allPictures,setAllPictures] = useState([]);
   const [namesProducts, setNames] = useState([]);
 
+  let listProducts = [];
+
+  allPictures.map((picture, index) => {
+    return listProducts = [
+      ...listProducts,
+      {
+        name: namesProducts[index],
+        url: picture,
+        // price,
+        // description,
+      }
+    ]
+  });
+
   const allState = {
-    allPictures,setAllPictures, namesProducts, setNames
+    allPictures,
+    setAllPictures,
+    namesProducts,
+    setNames,
+    listProducts,
   };
 
   return (
