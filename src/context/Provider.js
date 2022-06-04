@@ -16,7 +16,7 @@ function Provider({ children }) {
         id: namesProducts[index].split(' ')[0],
         url: picture,
         // price,
-        // description: describe[index][0],
+        description: describe[index],
       }
     ]
   });
