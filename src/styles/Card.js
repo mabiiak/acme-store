@@ -11,10 +11,11 @@ export const SectionProducts = styled.section`
     background-color: #EFEDED;
     border-radius: 10px;
     box-shadow: 0 5px 5px grey;
-    height: 350px;
-    margin: 9px;
+    height: 340px;
+    margin: 10px;
+    margin-left: 55px;
     padding: 7px;
-    width: 22%;
+    width: 25%;
 
     a {
       color: black;
@@ -34,26 +35,29 @@ export const SectionProducts = styled.section`
       margin-top: 0;
       position: relative;
 
-      h4, p {
-        margin-bottom: 0;
+      h4 {
         margin-left: 5px;
+        position: relative;
+        top: -20px;
+        text-align: center;
       }
 
       p {
-        bottom: -34px;
+        bottom: 0px;
+        margin-left: 5px;
         position: relative;
       }
     }
 
     .buttons {
-      bottom: -10px;
+      bottom: 25px;
       display: flex;
       flex-direction: row;
       height: 50px;
       margin-left: 5px;
       padding: 5px;
       position: relative;
-      right: -125px;
+      right: -165px;
       width: 40px;
     }
   }
