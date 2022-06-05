@@ -6,7 +6,9 @@ function Provider({ children }) {
   const [allPictures,setAllPictures] = useState([]);
   const [namesProducts, setNames] = useState([]);
   const [describe, setDescribe] = useState([]);
+
   const [filterName, setFilter] = useState('');
+  const [filterFavorite, setFilterFavorite] = useState(false);
 
   let listProducts = [];
 
@@ -34,6 +36,8 @@ function Provider({ children }) {
     setDescribe,
     filterName,
     setFilter,
+    filterFavorite,
+    setFilterFavorite,
   };
 
   return (

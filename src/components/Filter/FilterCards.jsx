@@ -1,24 +1,27 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Context } from '../context/Provider'
+import { Context } from '../../context/Provider'
 import { Link } from 'react-router-dom';
-import { SectionProducts } from '../styles/Card'; 
-import heart from '../images/heart.png';
-import cart from '../images/cart.png';
+import { getLocalStorage } from '../../services/localStorage';
+import heart from '../../images/heart.png';
+import cart from '../../images/cart.png';
+import { SectionProducts } from '../../styles/Card'; 
 
 function FilterCards() {
   const { listProducts, filterName } = useContext(Context);
   const [researched, setSearch] = useState([]);
 
   useEffect(() => {
-    const searched = listProducts.filter((item) => item.name.toLowerCase().includes(filterName.toLowerCase()));
-    setSearch(searched)
-  }, [researched])
+    if(filterName !== '') {
+      const searched = listProducts.filter((item) => item.name.toLowerCase().includes(filterName.toLowerCase()));
+      setSearch(searched)
+    }
+  }, [filterName])
 
   function handleClick({ target }) {
     const { name, id } = target;
     const selectedItem = listProducts.find((item) => item.name === id);
 
-    const initialStorage = JSON.parse(localStorage.getItem(name));
+    const initialStorage = getLocalStorage(name);
 
     if(initialStorage === null) {
       localStorage.setItem(name, JSON.stringify([{...selectedItem} ]));

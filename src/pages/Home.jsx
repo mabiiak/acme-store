@@ -3,8 +3,9 @@ import { Context } from '../context/Provider'
 import Header from '../components/Header';
 import AllCards from '../components/AllCards';
 import generateName from '../services/utils';
-import Filter from '../components/InputFilter';
-import FilterCards from '../components/FilterCards';
+import InputFilter from '../components/Filter/InputFilter';
+import FilterCards from '../components/Filter/FilterCards';
+import FilterFavCards from '../components/Filter/FilterFav';
 
 function Home() {
   const {
@@ -14,6 +15,7 @@ function Home() {
     setDescribe,
     describe,
     filterName,
+    filterFavorite,
   } = useContext(Context);
 
   useEffect(() => { // gera imagens - gera nome
@@ -54,12 +56,10 @@ function Home() {
   return(
     <div className='home_color'>
       <Header />
-      <Filter />
-      {
-        !filterName
-        ? (<AllCards />)
-        : (<FilterCards />)
-      }
+      <InputFilter />
+      { !filterName && filterFavorite === false && (<AllCards />) }
+      { filterName && (<FilterCards />) }
+      { filterFavorite === true && (<FilterFavCards />) }
     </div>
   )
 }
