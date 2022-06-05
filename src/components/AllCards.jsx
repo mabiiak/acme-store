@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
 import { Context } from '../context/Provider'
+import { Link } from 'react-router-dom';
 import { SectionProducts } from '../styles/Card'; 
 import heart from '../images/heart.png';
 import cart from '../images/cart.png';
@@ -9,12 +9,15 @@ function Card() {
   const { listProducts } = useContext(Context);
 
   function handleClick({ target }) {
-    const { name } = target;
-    console.log(name);
-    if(name === 'button') {
-      return (
-        <Link to='/' />
-      )
+    const { name, id } = target;
+    const selectedItem = listProducts.find((item) => item.name === id);
+
+    const initialStorage = JSON.parse(localStorage.getItem(name));
+
+    if(initialStorage === null) {
+      localStorage.setItem(name, JSON.stringify([{...selectedItem} ]));
+    } else {
+      localStorage.setItem(name, JSON.stringify([...initialStorage, {...selectedItem}]));
     }
   }
 
@@ -36,15 +39,17 @@ function Card() {
               src={ heart }
               alt='heart icon'
               className='button'
-              name='button'
-              onClick={ () => { handleClick() } }
+              name='heart'
+              onClick={ handleClick }
+              id={ item.name }
             />
             <img
               src={ cart }
-              alt='heart icon'
+              alt='cart icon'
               className='button'
-              name='button'
-              onClick={ () => { console.log('Gostei!!!'); } }
+              name='cart'
+              onClick={ handleClick }
+              id={ item.name }
             />
           </div>
         </div>
