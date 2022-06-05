@@ -7,6 +7,9 @@
 }
 
 .color {
-  background-color: #BC0001;
-  background: linear-gradient(180deg, #BC0001 25%, #f2f2f2 10%)
+  background: linear-gradient(180deg, #BC0001 85px, #f2f2f2 10%)
+}
+
+.home_color {
+  background: linear-gradient(180deg, #BC0001 300px, #f2f2f2 10%)
 }

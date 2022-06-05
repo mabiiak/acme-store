@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import { ProductCart } from '../styles/Card';
+import { Title } from '../styles/Headers';
 
 function Cart() {
   const [itensCart, setItensCart] = useState([]);
 
   useEffect(() => {
     const itens = JSON.parse(localStorage.getItem('cart'));
+    console.log(itens);
 
     setItensCart(itens);
   }, [])
@@ -14,9 +16,11 @@ function Cart() {
   return(
     <div className='color'>
       <Header />
-      <h3>Carrinho</h3>
+      <Title>
+        <h3> Carrinho </h3>
+      </Title>
       {
-        itensCart === true
+        itensCart !== null
           ?(<div>
             {itensCart.map((item) => (
               <ProductCart>

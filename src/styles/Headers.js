@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const PrincipalHeader = styled.header`
+export const HeaderOne = styled.header`
   align-items: center;
   color: white;
   display: flex;
@@ -10,10 +10,26 @@ export const PrincipalHeader = styled.header`
   padding: 5px;
   text-align: center;
   
-  a > img{
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  img{
     height: 50px;
     margin-left: 15px;
     padding: 10px;
     width: 50px;
+  }
+`
+
+export const Title = styled.div`
+  background-color: #BC0001;
+  padding: 5px;
+  height: 30px;
+
+  h3 {
+    color: white;
+    margin-left: 19%
   }
 `

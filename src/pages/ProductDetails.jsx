@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '../context/Provider';
 import { useParams } from 'react-router-dom';
 import Header from '../components/Header';
+import { Title } from '../styles/Headers';
 
 function ProductDetails() {
   const { id } = useParams()
@@ -24,7 +25,9 @@ function ProductDetails() {
           && 
             product[0].map((item) => (
               <div key={ item.name }>
-                <h2>{item.name}</h2>
+                <Title>
+                  <h3>{item.name}</h3>
+                </Title>
                 <img src={item.url} alt='imagem do produto'/>
                 <div>
                 <p>R$00,00</p>
