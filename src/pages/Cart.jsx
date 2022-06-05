@@ -7,7 +7,7 @@ function Cart() {
 
   useEffect(() => {
     const itens = JSON.parse(localStorage.getItem('cart'));
-    console.log(itens.length);
+
     setItensCart(itens);
   }, [])
 
@@ -15,21 +15,22 @@ function Cart() {
     <div className='color'>
       <Header />
       <h3>Carrinho</h3>
-      <div>
-        {
-          itensCart.length !== 0
-            && itensCart.map((item) => (
+      {
+        itensCart === true
+          ?(<div>
+            {itensCart.map((item) => (
               <ProductCart>
                 <img src={item.url} alt={item.name} />
                 <div>
                   <h4>{item.name}</h4>
                   <p>R$ 00,00</p>
                 </div>
-              </ProductCart>
-            ))
-        }
-      </div>
-      <p>Total</p>
+              </ProductCart>))
+            }
+            <p>Total</p>
+          </div>)
+          : <ProductCart>Carrinho vazio</ProductCart>
+      }
     </div>
   )
 }
