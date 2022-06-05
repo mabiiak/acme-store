@@ -62,3 +62,18 @@ export const SectionProducts = styled.section`
     }
   }
 `
+
+export const ProductCart = styled.div`
+  background-color: #EFEDED;
+  border: solid 1px black;
+  border-radius: 10px;
+  box-shadow: 0 5px 5px grey;
+  display: flex;
+  margin: 10px;
+  padding: 7px;
+  width: 60%;
+
+  img {
+    margin-right: 10px;
+  }
+`
