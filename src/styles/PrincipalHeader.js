@@ -10,7 +10,7 @@ export const PrincipalHeader = styled.header`
   padding: 5px;
   text-align: center;
   
-  div > a > img{
+  a > img{
     height: 50px;
     margin-left: 15px;
     padding: 10px;
