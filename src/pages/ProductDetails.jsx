@@ -5,23 +5,22 @@ import Header from '../components/Header';
 
 function ProductDetails() {
   const { id } = useParams()
-  const { listProducts } = useContext(Context);
+  const { listProducts, describe } = useContext(Context);
   const [product, setProduct] = useState([]);
 
   useEffect(() => {
     const result = listProducts.filter((product) => {
       return product.name.toLowerCase().split(' ').join('_') === id
     });
-    console.log(result);
     setProduct((prod) => [...prod, result]);
   }, []);
 
   return(
-    <div>
+    <div className='color'>
       <Header />
         <div>
         {
-          product.length !== 0
+          product.length !== 0 && describe.length !== 0
           && 
             product[0].map((item) => (
               <div key={ item.name }>

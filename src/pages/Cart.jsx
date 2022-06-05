@@ -3,10 +3,10 @@ import Header from '../components/Header';
 
 function Cart() {
   return(
-    <>
+    <div className='color'>
       <Header />
       <p>Carrinho</p>
-    </>
+    </div>
   )
 }
 
