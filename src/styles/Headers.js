@@ -6,7 +6,7 @@ export const HeaderOne = styled.header`
   display: flex;
   justify-content: space-between;
   margin-left: 19%;
-  margin-right:19%;
+  margin-right:17.5%;
   padding: 5px;
   text-align: center;
   
@@ -17,7 +17,6 @@ export const HeaderOne = styled.header`
 
   img{
     height: 50px;
-    margin-left: 15px;
     padding: 10px;
     width: 50px;
   }
