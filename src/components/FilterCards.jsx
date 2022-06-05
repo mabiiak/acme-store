@@ -1,12 +1,18 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '../context/Provider'
 import { Link } from 'react-router-dom';
 import { SectionProducts } from '../styles/Card'; 
 import heart from '../images/heart.png';
 import cart from '../images/cart.png';
 
-function AllCards() {
-  const { listProducts } = useContext(Context);
+function FilterCards() {
+  const { listProducts, filterName } = useContext(Context);
+  const [researched, setSearch] = useState([]);
+
+  useEffect(() => {
+    const searched = listProducts.filter((item) => item.name.toLowerCase().includes(filterName.toLowerCase()));
+    setSearch(searched)
+  }, [researched])
 
   function handleClick({ target }) {
     const { name, id } = target;
@@ -23,10 +29,9 @@ function AllCards() {
 
   return(
     <SectionProducts>
-    {
-      listProducts.map((item) => (
-        <div key={ item.name } className='card'
-        >
+      {
+        researched.map((item) => (
+        <div key={ item.name } className='card'>
           <Link to={`/product/${item.name.toLowerCase().split(' ').join('_')}`} >
             <img src={item.url} alt='imagem do produto'/>
             <div>
@@ -53,11 +58,10 @@ function AllCards() {
             />
           </div>
         </div>
-
       ))
     }
     </SectionProducts>
   )
 }
 
-export default AllCards;
+export default FilterCards;

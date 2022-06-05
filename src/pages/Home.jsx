@@ -1,16 +1,22 @@
 import React, { useEffect, useContext } from 'react';
 import { Context } from '../context/Provider'
 import Header from '../components/Header';
-import Card from '../components/AllCards';
+import AllCards from '../components/AllCards';
 import generateName from '../services/utils';
+import Filter from '../components/InputFilter';
+import FilterCards from '../components/FilterCards';
 
 function Home() {
-  const { setAllPictures, setNames, listProducts,
-    setDescribe, describe
+  const {
+    setAllPictures,
+    setNames,
+    listProducts,
+    setDescribe,
+    describe,
+    filterName,
   } = useContext(Context);
-  // const [meaning, setMeaning] = useState([]);
 
-  useEffect(() => {
+  useEffect(() => { // gera imagens - gera nome
     if(listProducts.length === 0) {
       setAllPictures([]);
       for(let index = 0; index < 10; index += 1) {
@@ -20,33 +26,40 @@ function Home() {
           })
           .catch(function(err) { console.log('Fetch Error', err) });
         }
-        setNames(generateName());
+      setNames(generateName());
     }
   }, []);
 
-  useEffect(() => {
+  useEffect(() => { // gera descrição
     if (describe.length === 0) {
       for(let index = 0; index < listProducts.length; index += 1) {
-        // console.log(describe);
         setDescribe([]);
+
         const word = listProducts[index].id;
-        const URL = `https://significado.herokuapp.com/v2/${word}`
+        const wordRegex = word.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+        // Referencia Regex ---> https://www.horadecodar.com.br/2020/12/07/como-remover-acentos-em-javascript/
+
+        const URL = `https://significado.herokuapp.com/v2/${wordRegex}`
 
         fetch(URL)
           .then(response => response.json())
           .then(response => {
-            // console.log(response);
             return setDescribe((prevSig) => [...prevSig, response]);
           })
           .catch(err => console.error(err));
       };
     }
   },[listProducts.length === 10]);
-  
+
   return(
-    <div className='home'>
+    <div className='home_color'>
       <Header />
-      <Card />
+      <Filter />
+      {
+        !filterName
+        ? (<AllCards />)
+        : (<FilterCards />)
+      }
     </div>
   )
 }
