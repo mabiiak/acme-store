@@ -1,5 +1,5 @@
-import verbs from './verbs';
-import adjectives from './adjectives';
+import verbs from './api/verbs';
+import adjectives from './api/adjectives';
 
 function randomNumber(max) {
   const newMax = Math.floor(max);
