@@ -70,9 +70,42 @@ export const ProductCart = styled.div`
   display: flex;
   margin: 10px;
   padding: 7px;
-  width: 60%;
+  width: 37%;
 
   img {
     margin-right: 10px;
+    width: 150px;
+  }
+
+  #infos {
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+
+    p {
+      margin: 20px;
+    }
+  }
+
+  #buttons {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+
+    p {
+      margin-right: 10px;
+      font-size: 20px;
+    }
+  }
+
+  .button {
+    width: 35px;
+    height: 35px;
+  }
+
+  .button:last-child {
+    margin-left: 1px;
+    width: 30px;
+    height: 30px;
   }
 `
