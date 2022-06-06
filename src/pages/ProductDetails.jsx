@@ -3,6 +3,8 @@ import { Context } from '../context/Provider';
 import { useParams } from 'react-router-dom';
 import Header from '../components/Header';
 import { Title } from '../styles/Headers';
+import heart from '../images/heart.png';
+import cart from '../images/cart.png';
 
 function ProductDetails() {
   const { id } = useParams()
@@ -13,8 +15,21 @@ function ProductDetails() {
     const result = listProducts.filter((product) => {
       return product.name.toLowerCase().split(' ').join('_') === id
     });
-    setProduct((prod) => [...prod, result]);
+    setProduct(result);
   }, []);
+
+  function handleClick({ target }) {
+    const { name, id } = target;
+
+    const selectedItem = product.find((item) => item.name === id);
+    const initialStorage = JSON.parse(localStorage.getItem(name));
+
+    if(initialStorage === null) {
+      localStorage.setItem(name, JSON.stringify([{...selectedItem} ]));
+    } else {
+      localStorage.setItem(name, JSON.stringify([...initialStorage, {...selectedItem}]));
+    }
+  }
 
   return(
     <div className='color'>
@@ -23,7 +38,7 @@ function ProductDetails() {
         {
           product.length !== 0 && describe.length !== 0
           && 
-            product[0].map((item) => (
+            product.map((item) => (
               <div key={ item.name }>
                 <Title>
                   <h3>{item.name}</h3>
@@ -42,6 +57,24 @@ function ProductDetails() {
                     </p>
                   )
                 }
+                 <div className='buttons'>
+                    <img
+                      src={ heart }
+                      alt='heart icon'
+                      className='button'
+                      name='heart'
+                      onClick={ handleClick }
+                      id={ item.name }
+                      />
+                    <img
+                      src={ cart }
+                      alt='cart icon'
+                      className='button'
+                      name='cart'
+                      onClick={ handleClick }
+                      id={ item.name }
+                    />
+              </div>
                 </div>
               </div>
             ))
