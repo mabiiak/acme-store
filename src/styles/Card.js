@@ -11,7 +11,7 @@ export const SectionProducts = styled.section`
     background-color: #EFEDED;
     border-radius: 10px;
     box-shadow: 0 5px 5px grey;
-    height: 340px;
+    height: 50vh;
     margin: 10px;
     margin-left: 55px;
     padding: 7px;
@@ -32,25 +32,24 @@ export const SectionProducts = styled.section`
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      margin-top: 0;
       position: relative;
 
       h4 {
         margin-left: 5px;
         position: relative;
         top: -20px;
-        text-align: center;
+        text-align: left;
       }
 
       p {
-        bottom: 0px;
+        bottom: -45px;
         margin-left: 5px;
         position: relative;
       }
     }
 
     .buttons {
-      bottom: 25px;
+      bottom: -15px;
       display: flex;
       flex-direction: row;
       height: 50px;
