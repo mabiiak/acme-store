@@ -11,7 +11,8 @@ function FilterFavCards() {
   }, [])
 
   return(
-    <ResumeCard list={ researched } />
+    researched !== null
+    ? <ResumeCard list={ researched } /> : <p>Não há favoritos</p>
   )
 }
 
