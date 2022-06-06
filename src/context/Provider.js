@@ -9,6 +9,7 @@ function Provider({ children }) {
 
   const [filterName, setFilter] = useState('');
   const [filterFavorite, setFilterFavorite] = useState(false);
+  const [filtredProducts, setFiltredProducts] = useState([]);
 
   let listProducts = [];
 
@@ -38,6 +39,8 @@ function Provider({ children }) {
     setFilter,
     filterFavorite,
     setFilterFavorite,
+    filtredProducts,
+    setFiltredProducts
   };
 
   return (

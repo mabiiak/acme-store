@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import AllCards from '../components/AllCards';
 import generateName from '../services/utils';
 import InputFilter from '../components/Filter/InputFilter';
-import FilterCards from '../components/Filter/FilterCards';
+import FilterName from '../components/Filter/FilterName';
 import FilterFavCards from '../components/Filter/FilterFav';
 
 function Home() {
@@ -18,7 +18,7 @@ function Home() {
     filterFavorite,
   } = useContext(Context);
 
-  useEffect(() => { // gera imagens - gera nome
+  useEffect(() => {
     if(listProducts.length === 0) {
       setAllPictures([]);
       for(let index = 0; index < 10; index += 1) {
@@ -32,7 +32,7 @@ function Home() {
     }
   }, []);
 
-  useEffect(() => { // gera descrição
+  useEffect(() => {
     if (describe.length === 0) {
       for(let index = 0; index < listProducts.length; index += 1) {
         setDescribe([]);
@@ -58,7 +58,7 @@ function Home() {
       <Header />
       <InputFilter />
       { !filterName && filterFavorite === false && (<AllCards />) }
-      { filterName && (<FilterCards />) }
+      { filterName && (<FilterName />) }
       { filterFavorite === true && (<FilterFavCards />) }
     </div>
   )

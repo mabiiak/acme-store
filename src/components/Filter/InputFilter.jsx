@@ -1,10 +1,18 @@
-import React, { useContext } from 'react';
+import React, { useContext,useState, useEffect } from 'react';
 import { Context } from '../../context/Provider'
 import { DivFilters } from '../../styles/Filters';
 import whiteHeart from '../../images/whiteHeart.png';
+import redBHeart from '../../images/redBHeart.png'
 
 function InputFilter() {
   const { setFilter, filterFavorite, setFilterFavorite, } = useContext(Context);
+  const [color, setColor] = useState(whiteHeart);
+  const [clicker, setClick] = useState(false);
+
+  useEffect(() => {
+    if (clicker === true) return setColor(redBHeart);
+    return setColor(whiteHeart);
+  }, [clicker])
 
   function handleText({ target }) {
     const { value } = target;
@@ -12,27 +20,29 @@ function InputFilter() {
   }
 
   async function handleClick() {
-    console.log('antes click', filterFavorite);
-
-    if(filterFavorite === '') {
-      await setFilterFavorite(true);
-      console.log('depois click',filterFavorite);
-   
-    } else if(filterFavorite ===  true) {
-      await setFilterFavorite(false)
-      console.log('depois click',filterFavorite);
+     if(filterFavorite ===  true) {
+      await setFilterFavorite(false);
 
     } else if(filterFavorite ===  false) {
       await setFilterFavorite(true)
-      console.log('depois click',filterFavorite); 
     }
 
+    if(clicker === false) return setClick(true);
+    return setClick(false);
   }
 
   return(
     <DivFilters>
-      <input type='text' placeholder='Buscar produto' onChange={ handleText} />
-      <img src={ whiteHeart } alt='icone de coração' onClick={ () => handleClick() } />
+      <input
+        type='text'
+        placeholder='Buscar produto'
+        onChange={ handleText}
+      />
+      <img
+        src={ color }
+        alt='icone de coração'
+        onClick={ () => handleClick() }
+      />
     </DivFilters>
   )
 }
