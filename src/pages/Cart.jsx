@@ -3,16 +3,19 @@ import Header from '../components/Header';
 import { ProductCart } from '../styles/Card';
 import { Title } from '../styles/Headers';
 import trashWhite from '../images/cartIcons/trash.png';
-// import add from '../images/cartIcons/add.png';
-// import subtract from '../images/cartIcons/subtract.png';
 
 function Cart() {
   const [itensCart, setItensCart] = useState([]);
-  // const [count, setCount] = useState(1);
+  let [total, setTotal] = useState(0);
 
   useEffect(() => {
     const itens = JSON.parse(localStorage.getItem('cart'));
-    setItensCart(itens);    
+    setItensCart(itens);
+
+    itensCart !== null
+      && itensCart.map((item) => (
+        setTotal((oldTotal) => (oldTotal += Number(item.price)))
+      ))
   }
   , [])
 
@@ -28,9 +31,9 @@ function Cart() {
   return(
     <div className='color'>
       <Header />
-      <Title> <h3> Carrinho </h3>  </Title>
+      <Title> <h3> Carrinho </h3></Title>
       {
-        itensCart.length !== 0
+        itensCart !== null
           ?(<div>
             {
               itensCart.map((item) => (
@@ -38,7 +41,7 @@ function Cart() {
                   <img src={item.url} alt={item.name} />
                   <div id='infos'>
                     <h4>{item.name}</h4>
-                    <p>R$ 00,00</p>
+                    <p>{item.price}</p>
                   </div>
                   <div id='buttons'>
                     {/* <img className='button' src={ add } alt="icone trash" />
@@ -49,13 +52,23 @@ function Cart() {
                       src={ trashWhite }
                       alt="icone trash"
                       name={item.name}
+                      id={item.price}
                       onClick={ removeItem }
                     />
                   </div>
                 </ProductCart>)
               )
             }
-            <p>Total</p>
+            <p>
+              Total: { total }
+              {
+                // itensCart !== null
+                //   && itensCart.map((item) => (
+                //     total += (Number(item.price))
+                //   ))
+              }
+
+            </p>
           </div>)
           : <ProductCart>Carrinho vazio</ProductCart>
       }
