@@ -1,4 +1,4 @@
-# Business Case Hype
+# ACME Store
 
 Esse projeto tem como intuito desenvolver uma loja virtual para uma empresa fictícia chamada Acme Inc., empresa que foca na venda de produtos geéricos.
 
