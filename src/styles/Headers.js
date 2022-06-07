@@ -5,20 +5,15 @@ export const HeaderOne = styled.header`
   color: white;
   display: flex;
   justify-content: space-between;
-  margin-left: 19%;
-  margin-right:17.5%;
+  margin-left: 17.5%;
+  margin-right:18%;
   padding: 5px;
   text-align: center;
-  
+
   a {
     color: white;
     text-decoration: none;
-  };
-
-  img{
-    height: 50px;
     padding: 10px;
-    width: 50px;
   };
 `;
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import whiteCart from '../images/whiteCart.png';
 import { HeaderOne } from '../styles/Headers';
+import { Icon } from '@iconify/react';
 
 function Header() {
   return(
@@ -10,7 +10,7 @@ function Header() {
         <h1>ACME</h1>
       </Link>
       <Link to='/cart'>
-        <img src={ whiteCart } alt='heart button' name='cart' />
+        <Icon icon="mdi:cart-heart" width="50" height="50" />
       </Link>
     </HeaderOne>
   );

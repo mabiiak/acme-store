@@ -1,18 +1,12 @@
-import React, { useContext,useState, useEffect } from 'react';
+import React, { useContext,useState } from 'react';
 import { Context } from '../../context/Provider'
 import { DivFilters } from '../../styles/Filters';
-import whiteHeart from '../../images/whiteHeart.png';
-import redBHeart from '../../images/redBHeart.png'
+import { Icon } from '@iconify/react';
 
 function InputFilter() {
   const { setFilter, filterFavorite, setFilterFavorite, } = useContext(Context);
-  const [color, setColor] = useState(whiteHeart);
   const [clicker, setClick] = useState(false);
-
-  useEffect(() => {
-    if (clicker === true) return setColor(redBHeart);
-    return setColor(whiteHeart);
-  }, [clicker])
+  const [color, setColor] = useState('eva:heart-fill');
 
   function handleText({ target }) {
     const { value } = target;
@@ -20,16 +14,21 @@ function InputFilter() {
   }
 
   async function handleClick() {
-     if(filterFavorite ===  true) {
-      await setFilterFavorite(false);
+    if(color === 'eva:heart-fill') {
+      setColor('eva:heart-outline');
+    } else {
+      setColor('eva:heart-fill')
+    };
 
+    if(filterFavorite ===  true) {
+      await setFilterFavorite(false);
     } else if(filterFavorite ===  false) {
-      await setFilterFavorite(true)
-    }
+      await setFilterFavorite(true);
+    };
 
     if(clicker === false) return setClick(true);
     return setClick(false);
-  }
+  };
 
   return(
     <DivFilters>
@@ -38,9 +37,14 @@ function InputFilter() {
         placeholder='Buscar produto'
         onChange={ handleText}
       />
-      <img
-        src={ color }
+
+      <Icon
+        icon={ color }
+        color='white'
+        width="60"
+        height="60"
         alt='icone de coração'
+        id='favorites'
         onClick={ () => handleClick() }
       />
     </DivFilters>
