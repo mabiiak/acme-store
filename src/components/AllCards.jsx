@@ -13,7 +13,7 @@ function AllCards() {
         return setPrice((oldValue) => [...oldValue, generatePrice]);
       })
     }, 1)
-  }, [listProducts.length === 10]);
+  }, [listProducts.length === 9]);
 
   return(
     <ResumeCard list={ listProducts } describe={ describe } prices={ price } />
