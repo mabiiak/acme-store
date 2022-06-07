@@ -10,10 +10,9 @@ function AllCards() {
     setTimeout(() => {
       listProducts.map((item, i) => {
         const generatePrice = getPrice(item.name, item.description);
-        console.log(i , listProducts);
         return setPrice((oldValue) => [...oldValue, generatePrice])
       })
-    }, 9000)
+    }, 1)
   }, [listProducts.length === 10])
 
   return(

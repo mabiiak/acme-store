@@ -44,7 +44,6 @@ class ResumeCard extends React.Component {
                       { prices[index] }
                     </p>
                 }
-              { console.log(prices) }
                 </div>
               </Link>
               <div className='buttons'>
