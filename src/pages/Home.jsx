@@ -18,7 +18,7 @@ function Home() {
   const [picturesAndNames, setPicturesAndNames] = useState({});
 
   useEffect(() => {
-    if(listProducts.length === 0) return  setPicturesAndNames(createPicturesAndNames());
+    if(listProducts.length === 0) return setPicturesAndNames(createPicturesAndNames());
   }, []);
 
   useEffect(() => { createListDescriptions() }, [picturesAndNames, setPicturesAndNames]);
@@ -31,7 +31,7 @@ function Home() {
       { filterName && (<FilterName />) }
       { filterFavorite === true && (<FilterFavCards />) }
     </div>
-  )
-}
+  );
+};
 
 export default Home;

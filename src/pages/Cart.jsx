@@ -11,20 +11,20 @@ function Cart() {
   useEffect(() => {
     const itens = JSON.parse(localStorage.getItem('cart'));
     setItensCart(itens);
-  }, [])
+  }, []);
 
   useEffect(() => {
     itensCart !== null && total === 0
       && itensCart.map((item) => (
         console.log(item.price),
         setTotal((oldTotal) => (oldTotal += Number(item.price)))
-      ))
-  }, [itensCart, setItensCart])
+      ));
+  }, [itensCart, setItensCart]);
 
   function removeItem({ target }) {
     const { name, id } = target;
 
-    const remove = itensCart.filter((item) => item.name !== name)
+    const remove = itensCart.filter((item) => item.name !== name);
     localStorage.setItem('cart', JSON.stringify(remove));
 
     setItensCart(remove);
@@ -67,7 +67,7 @@ function Cart() {
           : <ProductCart>Carrinho vazio</ProductCart>
       }
     </div>
-  )
-}
+  );
+};
 
 export default Cart;

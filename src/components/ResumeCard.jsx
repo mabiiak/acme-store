@@ -6,7 +6,7 @@ import cart from '../images/cart.png';
 
 class ResumeCard extends React.Component {
   constructor() {
-    super()
+    super();
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -20,8 +20,8 @@ class ResumeCard extends React.Component {
       localStorage.setItem(name, JSON.stringify([{...selectedItem} ]));
     } else {
       localStorage.setItem(name, JSON.stringify([...initialStorage, {...selectedItem}]));
-    }
-  }
+    };
+  };
 
   render() {
     const { list, prices } = this.props;
@@ -36,14 +36,11 @@ class ResumeCard extends React.Component {
               >
                 <img src={item.url} alt='imagem do produto'/>
                 <div>
-                <h4>{ item.name }</h4>
-                {
-                  list.length === 10 &&
-                    <p>
-                      R$
-                      { prices[index] }
-                    </p>
-                }
+                  <h4>{ item.name }</h4>
+                  {
+                    list.length === 10
+                    && <p> R$ { prices[index] } </p>
+                  }
                 </div>
               </Link>
               <div className='buttons'>
@@ -54,7 +51,7 @@ class ResumeCard extends React.Component {
                   name='heart'
                   onClick={ this.handleClick }
                   id={ item.name }
-                  />
+                />
                 <img
                   src={ cart }
                   alt='cart icon'
@@ -69,7 +66,7 @@ class ResumeCard extends React.Component {
         }
       </SectionProducts>
     )
-  }
-}
+  };
+};
 
 export default ResumeCard;

@@ -12,10 +12,10 @@ export const DivFilters = styled.div`
     height: 40px;
     text-align: center;
     width: 58.5%;
-  }
+  };
 
   img {
     margin-left: 22px;
     width: 40px;
-  }
-`
+  };
+`;

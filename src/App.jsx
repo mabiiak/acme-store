@@ -13,6 +13,6 @@ function App() {
       </Routes>
     </HashRouter>
   );
-}
+};
 
 export default App;

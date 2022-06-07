@@ -24,7 +24,7 @@ function Provider({ children }) {
       fetch('https://picsum.photos/200').then((response) => {
         return setAllPictures((oldPictures) => [...oldPictures, response.url]);
       }).catch(function(err) { console.log('Fetch Error', err) }); 
-    }
+    };
 
     setNames(generateName());
     return namesProducts
@@ -37,7 +37,7 @@ function Provider({ children }) {
       const wordRegex = word.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
       // Referencia Regex ---> https://www.horadecodar.com.br/2020/12/07/como-remover-acentos-em-javascript/
 
-      const URL = `https://significado.herokuapp.com/v2/${wordRegex}`  
+      const URL = `https://significado.herokuapp.com/v2/${wordRegex}`;
       return fetch(URL).then(response => response.json())
         .then(response => {
           return setDescribe((prevSig) => [...prevSig, response[0].meanings[0]]);
@@ -64,9 +64,9 @@ function Provider({ children }) {
         url: picture,
         id: namesProducts[index].split(' ')[0],
         description: describe[index],
-        price: price[index],   
+        price: price[index],
       }
-    ]
+    ];
   });
 
   const allState = {
@@ -95,6 +95,6 @@ function Provider({ children }) {
       { children }
     </Context.Provider>
   );
-}
+};
 
 export default Provider;

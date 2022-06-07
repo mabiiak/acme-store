@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import whiteCart from '../images/whiteCart.png';
 import { HeaderOne } from '../styles/Headers';
 
-function Header() { 
+function Header() {
   return(
     <HeaderOne>
       <Link to='/'>
@@ -13,7 +13,7 @@ function Header() {
         <img src={ whiteCart } alt='heart button' name='cart' />
       </Link>
     </HeaderOne>
-  )
+  );
 }
 
 export default Header;

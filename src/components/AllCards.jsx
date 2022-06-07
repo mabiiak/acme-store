@@ -10,10 +10,10 @@ function AllCards() {
     setTimeout(() => {
       listProducts.map((item, i) => {
         const generatePrice = getPrice(item.name, item.description);
-        return setPrice((oldValue) => [...oldValue, generatePrice])
+        return setPrice((oldValue) => [...oldValue, generatePrice]);
       })
     }, 1)
-  }, [listProducts.length === 10])
+  }, [listProducts.length === 10]);
 
   return(
     <ResumeCard list={ listProducts } describe={ describe } prices={ price } />

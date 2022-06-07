@@ -13,14 +13,14 @@ export const HeaderOne = styled.header`
   a {
     color: white;
     text-decoration: none;
-  }
+  };
 
   img{
     height: 50px;
     padding: 10px;
     width: 50px;
-  }
-`
+  };
+`;
 
 export const Title = styled.div`
   background-color: #BC0001;
@@ -30,5 +30,5 @@ export const Title = styled.div`
   h3 {
     color: white;
     margin-left: 19%
-  }
-`
+  };
+`;
