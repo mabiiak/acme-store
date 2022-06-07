@@ -24,12 +24,12 @@ class ResumeCard extends React.Component {
   }
 
   render() {
-    const { list } = this.props;
+    const { list, prices } = this.props;
 
     return (
       <SectionProducts>
         {
-          list.map((item) => (
+          list.map((item, index) => (
             <div key={ item.name } className='card'>
               <Link
                 to={`/product/${item.name.toLowerCase().split(' ').join('_')}`}
@@ -37,7 +37,14 @@ class ResumeCard extends React.Component {
                 <img src={item.url} alt='imagem do produto'/>
                 <div>
                 <h4>{ item.name }</h4>
-                <p>R$00,00</p>
+                {
+                  list.length === 10 &&
+                    <p>
+                      R$
+                      { prices[index] }
+                    </p>
+                }
+              { console.log(prices) }
                 </div>
               </Link>
               <div className='buttons'>

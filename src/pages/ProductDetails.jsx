@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import { Title } from '../styles/Headers';
 import heart from '../images/heart.png';
 import cart from '../images/cart.png';
+import getPrice from '../services/calcPrice';
 
 function ProductDetails() {
   const { id } = useParams()
@@ -45,11 +46,11 @@ function ProductDetails() {
                 </Title>
                 <img src={item.url} alt='imagem do produto'/>
                 <div>
-                <p>R$00,00</p>
+                <p>R${ item.price }</p>
                 {(
-                  item.description[0].meanings[0].length >= 20
-                  && item.description[0].meanings[0].length <= 500)
-                  ? (<p>{ item.description[0].meanings }</p>)
+                  item.description.length >= 20
+                  && item.description.length <= 500)
+                  ? (<p>{ item.description }</p>)
                   : (<p>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Quisquam unde vero fugiat ipsa. Ab quo vitae nihil sapiente autem ad veniam labore!
