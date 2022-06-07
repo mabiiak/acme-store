@@ -11,21 +11,27 @@ function Cart() {
   useEffect(() => {
     const itens = JSON.parse(localStorage.getItem('cart'));
     setItensCart(itens);
+  }, [])
 
-    itensCart !== null
+  useEffect(() => {
+    itensCart !== null && total === 0
       && itensCart.map((item) => (
+        console.log(item.price),
         setTotal((oldTotal) => (oldTotal += Number(item.price)))
       ))
-  }
-  , [])
+  }, [itensCart, setItensCart])
 
   function removeItem({ target }) {
-    const { name } = target;
+    const { name, id } = target;
 
     const remove = itensCart.filter((item) => item.name !== name)
     localStorage.setItem('cart', JSON.stringify(remove));
 
-    setItensCart(remove)
+    setItensCart(remove);
+
+    setTotal((oldTotal) => (oldTotal -= Number(id)));
+
+    if(itensCart.length === 0) return setTotal(0);
   }
 
   return(
@@ -44,9 +50,6 @@ function Cart() {
                     <p>{item.price}</p>
                   </div>
                   <div id='buttons'>
-                    {/* <img className='button' src={ add } alt="icone trash" />
-                    <p>{ count }</p>
-                    <img className='button' src={ subtract } alt="icone trash" /> */}
                     <img
                       className='button'
                       src={ trashWhite }
@@ -59,16 +62,7 @@ function Cart() {
                 </ProductCart>)
               )
             }
-            <p>
-              Total: { total }
-              {
-                // itensCart !== null
-                //   && itensCart.map((item) => (
-                //     total += (Number(item.price))
-                //   ))
-              }
-
-            </p>
+            <p> Total: { total } </p>
           </div>)
           : <ProductCart>Carrinho vazio</ProductCart>
       }
