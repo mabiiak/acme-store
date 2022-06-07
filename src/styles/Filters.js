@@ -17,15 +17,6 @@ export const DivFilters = styled.div`
   };
 
   #favorites {
-    /* background-color: red; */
     padding: 5px;
-  }
-
-  .beforeClick {
-    display: block;
-  }
-
-  .afterClick {
-    display: none;
   }
 `;

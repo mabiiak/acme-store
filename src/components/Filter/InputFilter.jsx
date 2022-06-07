@@ -6,7 +6,7 @@ import { Icon } from '@iconify/react';
 function InputFilter() {
   const { setFilter, filterFavorite, setFilterFavorite, } = useContext(Context);
   const [clicker, setClick] = useState(false);
-  const [color, setColor] = useState('eva:heart-fill');
+  const [color, setColor] = useState('fa6-solid:heart');
 
   function handleText({ target }) {
     const { value } = target;
@@ -14,10 +14,10 @@ function InputFilter() {
   }
 
   async function handleClick() {
-    if(color === 'eva:heart-fill') {
-      setColor('eva:heart-outline');
+    if(color === 'fa6-solid:heart') {
+      setColor("et:heart");
     } else {
-      setColor('eva:heart-fill')
+      setColor('fa6-solid:heart')
     };
 
     if(filterFavorite ===  true) {
@@ -41,8 +41,8 @@ function InputFilter() {
       <Icon
         icon={ color }
         color='white'
-        width="60"
-        height="60"
+        width="50"
+        height="50"
         alt='icone de coração'
         id='favorites'
         onClick={ () => handleClick() }

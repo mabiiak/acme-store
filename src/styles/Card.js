@@ -59,6 +59,10 @@ export const SectionProducts = styled.section`
       right: -165px;
       width: 40px;
     };
+
+    .button {
+      /* background-color: red; */
+    }
   };
 `;
 

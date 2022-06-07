@@ -1,15 +1,12 @@
-import React, { useEffect, useState, useContext } from 'react';
-import { Context } from '../../context/Provider';
+import React, { useEffect, useState } from 'react';
 import { getLocalStorage } from '../../services/localStorage';
 import { Title } from '../../styles/Headers';
 import { Link } from 'react-router-dom';
-import ResumeCard from '../ResumeCard';
 import { SectionProducts } from '../../styles/Card';
-import heart  from '../../images/heart.png';
-import cart  from '../../images/cart.png'
+import cart  from '../../images/cart.png';
+import redHeart from '../../images/redHeart.png';
 
 function FilterFavCards() {
-  const { price } = useContext(Context);
   const [researched, setSearch] = useState([]);
 
   useEffect(() => {
@@ -69,7 +66,7 @@ function FilterFavCards() {
                   </Link>
                   <div className='buttons'>
                     <img
-                      src={ heart }
+                      src={ redHeart }
                       alt='heart icon'
                       className='button'
                       name='heart'

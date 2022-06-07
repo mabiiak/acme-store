@@ -3,12 +3,26 @@ import { Link } from 'react-router-dom';
 import { SectionProducts } from "../styles/Card";
 import heart from '../images/heart.png';
 import cart from '../images/cart.png';
+import redHeart from '../images/redHeart.png'
+import redCart from '../images/redCart.png';
 
 class ResumeCard extends React.Component {
   constructor() {
     super();
     this.handleClick = this.handleClick.bind(this);
   }
+
+  componentDidMount() {
+    window.addEventListener('click', ({target}) => {
+      if(target.alt === 'heart icon') {
+        target.src = redHeart;
+      };
+
+      if(target.alt === 'cart icon') {
+        target.src = redCart;
+      };
+    });
+  };
 
   handleClick({ target }) {
     const { name, id } = target;
@@ -36,7 +50,6 @@ class ResumeCard extends React.Component {
 
   render() {
     let { list, prices, page } = this.props;
-    // const { renderList } = this.state;
 
     return (
       <SectionProducts>

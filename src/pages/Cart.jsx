@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import { ProductCart } from '../styles/Card';
 import { Title } from '../styles/Headers';
-import trashWhite from '../images/cartIcons/trash.png';
+import trashWhite from '../images/cardIcons/trash.png';
 
 function Cart() {
   const [itensCart, setItensCart] = useState([]);
