@@ -5,7 +5,7 @@ import Header from '../components/Header';
 import { Title } from '../styles/Headers';
 import heart from '../images/heart.png';
 import cart from '../images/cart.png';
-import getPrice from '../services/calcPrice';
+import { CardResume } from '../styles/Card';
 
 function ProductDetails() {
   const { id } = useParams()
@@ -41,23 +41,23 @@ function ProductDetails() {
           && 
             product.map((item) => (
               <div key={ item.name }>
-                <Title>
-                  <h3>{item.name}</h3>
-                </Title>
+                <CardResume>
                 <img src={item.url} alt='imagem do produto'/>
-                <div>
-                <p>R${ item.price }</p>
-                {(
-                  item.description.length >= 20
-                  && item.description.length <= 500)
-                  ? (<p>{ item.description }</p>)
-                  : (<p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Quisquam unde vero fugiat ipsa. Ab quo vitae nihil sapiente autem ad veniam labore!
-                      Perferendis, optio cum. Earum architecto sequi laudantium harum.
-                    </p>
-                  )
-                }
+                <div className='infos'>
+                  <h3>{item.name}</h3>
+                  {(
+                    item.description.length >= 20
+                    && item.description.length <= 500)
+                    ? (<p>{ item.description }</p>)
+                    : (<p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Quisquam unde vero fugiat ipsa. Ab quo vitae nihil sapiente autem ad veniam labore!
+                        Perferendis, optio cum. Earum architecto sequi laudantium harum.
+                      </p>
+                    )
+                  }
+                  <p>R${ item.price }</p>
+
                  <div className='buttons'>
                     <img
                       src={ heart }
@@ -74,9 +74,10 @@ function ProductDetails() {
                       name='cart'
                       onClick={ handleClick }
                       id={ item.name }
-                    />
-              </div>
-                </div>
+                      />
+                    </div>
+                  </div>
+                </CardResume>
               </div>
             ))
         }

@@ -109,3 +109,42 @@ export const ProductCart = styled.div`
     height: 30px;
   }
 `
+
+export const CardResume = styled.div`
+  background-color: #EFEDED;
+  border-radius: 10px;
+  box-shadow: 0 5px 5px grey;
+  display:flex;
+  flex-direction: row;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top: 20px;
+  padding: 7px;
+  width: 70%;
+
+  .infos {
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 17px;
+
+    p {
+      margin-top: 10px;
+    }
+  }
+
+  img {
+    margin-left:7px;
+    width: 300px;
+    height: 300px;
+    margin-top: 7px;
+  }
+
+  .buttons {
+    flex-direction: row;
+
+    img {
+      width: 75px;
+      height: 75px;
+    }
+  }
+`
