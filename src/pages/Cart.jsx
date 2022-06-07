@@ -16,7 +16,6 @@ function Cart() {
   useEffect(() => {
     itensCart !== null && total === 0
       && itensCart.map((item) => (
-        console.log(item.price),
         setTotal((oldTotal) => (oldTotal += Number(item.price)))
       ));
   }, [itensCart, setItensCart]);
@@ -62,7 +61,7 @@ function Cart() {
                 </ProductCart>)
               )
             }
-            <p> Total: { total } </p>
+            <p> Total: R${ total.toFixed(2) } </p>
           </div>)
           : <ProductCart>Carrinho vazio</ProductCart>
       }
