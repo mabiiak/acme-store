@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import { Context } from '../../context/Provider';
 import { getLocalStorage } from '../../services/localStorage';
+import { Title } from '../../styles/Headers';
 import ResumeCard from '../ResumeCard';
 
 function FilterFavCards() {
+  const { price } = useContext(Context);
   const [researched, setSearch] = useState([]);
 
   useEffect(() => {
@@ -10,9 +13,19 @@ function FilterFavCards() {
     setSearch(searched)
   }, [])
 
+  
   return(
-    researched !== null
-    ? <ResumeCard list={ researched } /> : <p>Não há favoritos</p>
+    <div>
+      <Title>
+        <h3>
+          Favoritos
+        </h3>
+      </Title>
+      {
+        researched !== null
+      ? <ResumeCard list={ researched } page='fav' />
+      : <p>Não há favoritos</p>}
+    </div>
   )
 }
 

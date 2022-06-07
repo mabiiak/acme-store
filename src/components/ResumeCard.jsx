@@ -24,7 +24,7 @@ class ResumeCard extends React.Component {
   };
 
   render() {
-    const { list, prices } = this.props;
+    const { list, prices, page } = this.props;
 
     return (
       <SectionProducts>
@@ -38,7 +38,9 @@ class ResumeCard extends React.Component {
                 <div>
                   <h4>{ item.name }</h4>
                   {
-                    list.length === 10
+                    page === 'fav'
+                    ? (<p> R$ { item.price } </p>)
+                    : list.length === 10
                     && <p> R$ { prices[index] } </p>
                   }
                 </div>
