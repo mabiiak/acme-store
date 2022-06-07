@@ -12,19 +12,31 @@ class ResumeCard extends React.Component {
 
   handleClick({ target }) {
     const { name, id } = target;
+    let { list } = this.props;
 
-    const selectedItem = this.props.list.find((item) => item.name === id);
+    const selectedItem = list.find((item) => item.name === id);
     const initialStorage = JSON.parse(localStorage.getItem(name));
+    let checkExist = false;
 
+    if(initialStorage !== null) {
+      checkExist = initialStorage.some((item) => item.name === id);
+    }
+  
     if(initialStorage === null) {
       localStorage.setItem(name, JSON.stringify([{...selectedItem} ]));
-    } else {
+
+    } else if (initialStorage !== null && checkExist === false) {
       localStorage.setItem(name, JSON.stringify([...initialStorage, {...selectedItem}]));
+
+    } else if (initialStorage !== null && checkExist === true) {
+      const removeItem = initialStorage.filter((item) => item.name !== id)
+      localStorage.setItem(name, JSON.stringify([...removeItem]));
     };
   };
 
   render() {
-    const { list, prices, page } = this.props;
+    let { list, prices, page } = this.props;
+    // const { renderList } = this.state;
 
     return (
       <SectionProducts>

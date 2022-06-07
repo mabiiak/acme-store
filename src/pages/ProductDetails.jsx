@@ -21,13 +21,23 @@ function ProductDetails() {
   function handleClick({ target }) {
     const { name, id } = target;
 
-    const selectedItem = product.find((item) => item.name === id);
+    const selectedItem = listProducts.find((item) => item.name === id);
     const initialStorage = JSON.parse(localStorage.getItem(name));
+    let checkExist = false;
 
+    if(initialStorage !== null) {
+      checkExist = initialStorage.some((item) => item.name === id);
+    }
+  
     if(initialStorage === null) {
       localStorage.setItem(name, JSON.stringify([{...selectedItem} ]));
-    } else {
+
+    } else if (initialStorage !== null && checkExist === false) {
       localStorage.setItem(name, JSON.stringify([...initialStorage, {...selectedItem}]));
+
+    } else if (initialStorage !== null && checkExist === true) {
+      const removeItem = initialStorage.filter((item) => item.name !== id)
+      localStorage.setItem(name, JSON.stringify([...removeItem]));
     };
   };
 
