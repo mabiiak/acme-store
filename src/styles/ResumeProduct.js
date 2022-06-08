@@ -61,6 +61,7 @@ export const ResumeProduct = styled.section`
         .buttonIcon {
           border-radius: 50%;
           border: none;
+          background-color: none;
 
           img {
             padding: 5px;

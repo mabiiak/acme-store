@@ -6,11 +6,6 @@
   font-family: 'Krona One', sans-serif;
 }
 
-.home_color {
+.home_color, .color {
   background: #efebeb 0%;
-
-};
-
-.color {
-  /* background: linear-gradient(180deg, #800800 400px, #d4cbcb 10%) */
 };

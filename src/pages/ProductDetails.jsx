@@ -50,39 +50,41 @@ function ProductDetails() {
           && product.map((item) => (
             <div key={ item.name }>
               <CardResume>
-              <img src={item.url} alt='imagem do produto'/>
-              <div className='infos'>
-                <h3>{ item.name }</h3>
-                {
-                  (item.description.length >= 20 && item.description.length <= 500)
-                    ? (<p>{ item.description }</p>)
-                    : (<p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Quisquam unde vero fugiat ipsa. Ab quo vitae nihil sapiente autem ad veniam labore!
-                      Perferendis, optio cum. Earum architecto sequi laudantium harum.
-                    </p>
-                  )
-                }
-                <p>R${ item.price }</p>
-                <div className='buttons'>
-                  <img
-                    src={ heart }
-                    alt='heart icon'
-                    className='button'
-                    name='heart'
-                    onClick={ handleClick }
-                    id={ item.name }
-                    />
-                  <img
-                    src={ cart }
-                    alt='cart icon'
-                    className='button'
-                    name='cart'
-                    onClick={ handleClick }
-                    id={ item.name }
-                  />
+                <div id='card'>
+                  <img src={item.url} alt='imagem do produto'/>
+                  <div className='infos'>
+                    <h3>{ item.name }</h3>
+                    {
+                      (item.description.length >= 20 && item.description.length <= 500)
+                        ? (<p>{ item.description }</p>)
+                        : (<p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                          Quisquam unde vero fugiat ipsa. Ab quo vitae nihil sapiente autem ad veniam labore!
+                          Perferendis, optio cum. Earum architecto sequi laudantium harum.
+                        </p>
+                      )
+                    }
+                    <p id='price'>R${ item.price }</p>
+                      <div id='buttons'>
+                        <img
+                          src={ heart }
+                          alt='heart icon'
+                          className='buttonIcon'
+                          name='heart'
+                          onClick={ handleClick }
+                          id={ item.name }
+                          />
+                        <img
+                          src={ cart }
+                          alt='cart icon'
+                          className='buttonIcon'
+                          name='cart'
+                          onClick={ handleClick }
+                          id={ item.name }
+                          />
+                      </div>
+                    </div>
                   </div>
-                </div>
               </CardResume>
             </div>
           ))
