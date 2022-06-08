@@ -22,6 +22,20 @@ export const HeaderOne = styled.header`
       font-size: 25px;
     }
   }
+
+  @media screen and (max-width: 650px) {
+    margin-left: 5%;
+    margin-right:5%;
+
+    #buttonCart{
+    display:flex;
+    align-items: center;
+
+      p {
+        font-size: 15px;
+      }
+    }
+  }
 `;
 
 export const Title = styled.div`

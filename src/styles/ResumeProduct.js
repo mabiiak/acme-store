@@ -6,20 +6,27 @@ export const ResumeProduct = styled.section`
   margin-left: auto;
   margin-right: auto; 
   justify-content:center;
+  background-color: white;
+  margin-left: 18%;
+  margin-right: 18%;
+  box-shadow: 0 2px 2px grey;
+  justify-content: space-around;
 
   .card {
-    background-color: #EFEDED;
-    box-shadow: 0 2px 2px grey;
+    background-color: #efebeb;
     display:flex;
     flex-direction: column;
-    margin: 20px;
+    margin: 5px;
+    margin-top: 25px;
     padding: 7px;
-    padding-bottom: 20px;
-    width: 20vw;
+    padding-bottom: 10px;
+    width: 12vw;
+    align-items: center;
 
     a {
       color: black;
       text-decoration: none;
+      align-items: center;
     };
 
     img {
@@ -28,65 +35,55 @@ export const ResumeProduct = styled.section`
     };
 
     h4 {
+      margin-left: auto;
+      margin-right: auto;
+      width: 80%;
+      margin-bottom: 10px;
+      text-align: center;
+    };
+
+    p {
       margin-left: 2%;
-      width: 35%
+      margin-bottom: 10px;
     };
 
     #infos {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      align-content: flex-end;
-      align-items: center;
-      margin-top: 10px;
 
-      p {
-        margin-left: 2%;
-      };
-      
       #buttons {
         display: flex;
         flex-direction: row;
-        height: 50px;
-        padding: 5px;
-        position: relative;
-        right: 15%;
-        width: 50px;
-
-        .img {
-          width: 5%;
-          height: 5%;
-        }
-      };
-    };
-  };
-
-  @media(max-width: 1250px) {
-    .card {
-      #infos {
-        flex-direction: row;
         justify-content: space-between;
+        padding: 5px;
+        width: 90%;
 
-        p {
-          margin-left: 2%;
-        };
-        
-        #buttons {
-          padding: 5px;
-          margin-right: 3%;
+        .buttonIcon {
+          border-radius: 50%;
+          border: none;
 
-          .img {
-            width: 3%;
-            height: 3%;
-          };
-        };
+          img {
+            padding: 5px;
+            width: 55px;
+          }
+        }
+
+        .buttonIcon:active{
+          background-color: #BC0001;
+        }
+
+        img {
+          width: 50%;
+          height: 90%;
+        }
       };
     };
   };
 
   @media(max-width: 1000px) {
     width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
 
     .card {
       margin: 20px;
@@ -120,44 +117,41 @@ export const ResumeProduct = styled.section`
     .card {
       display: flex;
       flex-direction: column;
-      padding: 3px;
-      width: 100vw;
-      height: 20vh;
+      padding: 0;
+      width: 70%;
+      /* height: 40vh; */
 
       img {
-        height: 142px;
-        width: 142px;
-        padding: 5px;
+        height: 95%;
+        width: 95%;
+        padding: 10px;
+        margin-top: 5%;
       }
+
       h4 {
-        position: relative;
-        top: -75%;
-        left: 20%;
-        width: 90%;
+        width: 50%;
         text-align: center;
       };
-      #infos {
-        flex-direction: column;
+      
+      p {
+        margin-left: 55%;
+        margin-top: 30%;
+        width: 100%;
+      };
 
-        p {
-          position:relative;
-          top: -45%;
-          left: 52%;
-          width: 100%;
-        };
-        
+      #infos {
         #buttons {
           padding: 10px;
-          margin-right: 90%;
-          margin-top: 40%;
-          position: relative;
-          top: -116%;
-          left: 53%;
+          margin-left: 1%;
+          margin-top: -10%;
+          /* position: relative; */
+          /* top: -116%; */
+          /* left: 53%; */
           
           img {
-            height: 100%;
-            width: 130%;
-          };
+            width: 50%;
+            height: 90%;
+          }
         };
       };
     };
