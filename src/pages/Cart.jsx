@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
-import { BaseCart, Total, EmptyCart } from '../styles/Cart';
+import { BaseCart, Total } from '../styles/Cart';
 import { Title } from '../styles/Headers';
 import trashWhite from '../images/cardIcons/trash.png';
 import { Link } from 'react-router-dom';
@@ -37,7 +37,7 @@ function Cart() {
   return(
     <div className='color backgroundCart'>
       <Header />
-      <Title> <h3> Carrinho </h3></Title>
+        <Title> <h3> CARRINHO </h3></Title>
       <BaseCart>
       {
         itensCart.length !== 0

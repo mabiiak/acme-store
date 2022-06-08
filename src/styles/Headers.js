@@ -41,6 +41,7 @@ export const HeaderOne = styled.header`
 export const Title = styled.div`
   padding: 5px;
   height: 30px;
+  margin-top: 10px;
 
   h3 {
     margin-left: 19%;
