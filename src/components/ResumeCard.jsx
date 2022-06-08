@@ -53,6 +53,7 @@ class ResumeCard extends React.Component {
 
     return (
       <ResumeProduct>
+        { console.log(list) }
         {
           list.map((item, index) => (
             <div key={ item.name } className='card'>

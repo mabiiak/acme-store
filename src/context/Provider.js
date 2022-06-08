@@ -20,7 +20,7 @@ function Provider({ children }) {
   function createPicturesAndNames() {
     setAllPictures([]);
 
-    for(let index = 0; index < 9; index += 1) {
+    for(let index = 0; index < 10; index += 1) {
       fetch('https://picsum.photos/200').then((response) => {
         return setAllPictures((oldPictures) => [...oldPictures, response.url]);
       }).catch(function(err) { console.log('Fetch Error', err) }); 
@@ -48,7 +48,7 @@ function Provider({ children }) {
   }
 
   function createListPrices() {
-    for(let index = 0; index < 9; index +=1) {
+    for(let index = 0; index < 10; index +=1) {
       let value = getPrice(namesProducts[index], describe[index]);
 
       setPrice((oldValues) => [...oldValues, value]);

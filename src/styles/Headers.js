@@ -2,28 +2,33 @@ import styled from 'styled-components'
 
 export const HeaderOne = styled.header`
   align-items: center;
-  color: white;
+  border-bottom: solid 3px #BC0001;
   display: flex;
   justify-content: space-between;
-  margin-left: 17.5%;
+  margin-left: 18%;
   margin-right:18%;
-  padding: 5px;
-  text-align: center;
 
   a {
-    color: white;
+    color: #BC0001;
     text-decoration: none;
-    padding: 10px;
+    padding: 5px;
   };
+
+  #buttonCart{
+    display:flex;
+    align-items: center;
+
+    p {
+      font-size: 25px;
+    }
+  }
 `;
 
 export const Title = styled.div`
-  background-color: #BC0001;
   padding: 5px;
   height: 30px;
 
   h3 {
-    color: white;
-    margin-left: 19%
+    margin-left: 19%;
   };
 `;

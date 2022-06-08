@@ -9,14 +9,13 @@ export const ResumeProduct = styled.section`
 
   .card {
     background-color: #EFEDED;
-    border-radius: 10px;
     box-shadow: 0 2px 2px grey;
     display:flex;
     flex-direction: column;
     margin: 20px;
     padding: 7px;
     padding-bottom: 20px;
-    width: 22vw;
+    width: 20vw;
 
     a {
       color: black;
