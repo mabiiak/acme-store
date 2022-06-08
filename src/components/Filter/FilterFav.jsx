@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import { Context } from '../../context/Provider';
 import { getLocalStorage } from '../../services/localStorage';
 import { Title } from '../../styles/Headers';
 import { Link } from 'react-router-dom';
 import { ResumeProduct } from "../../styles/ResumeProduct";
 import cart  from '../../images/cart.png';
-import redHeart from '../../images/redHeart.png';
+import heart from '../../images/heart.png';
 
 function FilterFavCards() {
+  const { price } = useContext(Context);
   const [researched, setSearch] = useState([]);
 
   useEffect(() => {
@@ -43,8 +45,7 @@ function FilterFavCards() {
   
   return(
     <div>
-      <Title><h3> Favoritos </h3></Title>
-      { console.log(researched) }
+      <Title><h3> FAVORITOS </h3></Title>
       {
         researched.length !== 0
         ? (
@@ -59,28 +60,32 @@ function FilterFavCards() {
                     <div>
                       <h4>{ item.name }</h4>
                       {
-                        researched.length === 10
-                        && <p> R$ { researched[index] } </p>
+                        price.length === 10
+                        && <p> R$ { price[index] } </p>
                       }
                     </div>
                   </Link>
-                  <div className='buttons'>
-                    <img
-                      src={ redHeart }
-                      alt='heart icon'
-                      className='button'
-                      name='heart'
-                      onClick={ handleClick }
-                      id={ item.name }
-                    />
-                    <img
-                      src={ cart }
-                      alt='cart icon'
-                      className='button'
-                      name='cart'
-                      onClick={ handleClick }
-                      id={ item.name }
-                    />
+                  <div id='infos'>
+                    <div id='buttons'>
+                      <button className='buttonIcon'>
+                        <img
+                          src={ heart }
+                          alt='heart icon'
+                          name='heart'
+                          onClick={ handleClick }
+                          id={ item.name }
+                        />
+                      </button>
+                      <button className='buttonIcon'>
+                        <img
+                          src={ cart }
+                          alt='cart icon'
+                          name='cart'
+                          onClick={ handleClick }
+                          id={ item.name }
+                        />
+                      </button>
+                    </div>
                   </div>
                 </div>
               ))

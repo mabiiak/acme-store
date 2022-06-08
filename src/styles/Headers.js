@@ -44,5 +44,12 @@ export const Title = styled.div`
 
   h3 {
     margin-left: 19%;
+    color: #BC0001;
   };
+
+  @media screen and (max-width: 650px) {
+    h3 {
+      margin-left: 5%;
+    };
+  }
 `;

@@ -46,7 +46,7 @@ class ResumeCard extends React.Component {
               <Link
                 to={`/product/${item.name.toLowerCase().split(' ').join('_')}`}
               >
-                <img src={item.url} alt='imagem do produto'/>
+                <img id='imgProduct' src={item.url} alt='imagem do produto'/>
                 <h4>{ item.name }</h4>
               </Link>
                 { <p> R$ { prices[index] } </p> }

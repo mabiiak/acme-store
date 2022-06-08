@@ -93,23 +93,27 @@ export const ResumeProduct = styled.section`
       width: 35vw;
 
       #infos {
-        flex-direction: row;
-        justify-content: space-between;
-        margin: 2px;
+        margin-top: 10%;
+  
+        .buttonIcon {
+          border-radius: 50%;
+          border: none;
+          background-color: none;
 
-        p {
-          margin-left: 2%;
-        };
-        
-        #buttons {
-          padding: 5px;
-          margin-right: 2%;
+          img {
+            padding: 5px;
+            width: 55px;
+          }
+        }
 
-          .img {
-            width: 3%;
-            height: 3%;
-          };
-        };
+        .buttonIcon:active{
+          background-color: #BC0001;
+        }
+
+        img {
+          width: 50%;
+          height: 90%;
+        }
       };
     };
   }
@@ -118,19 +122,19 @@ export const ResumeProduct = styled.section`
     .card {
       display: flex;
       flex-direction: column;
-      padding: 0;
+      padding: 03%;
       width: 70%;
-      /* height: 40vh; */
+      padding: 5px;
 
       img {
         height: 95%;
         width: 95%;
-        padding: 10px;
+        padding: 3%;
         margin-top: 5%;
       }
 
       h4 {
-        width: 50%;
+        width: 60%;
         text-align: center;
       };
       
@@ -141,20 +145,28 @@ export const ResumeProduct = styled.section`
       };
 
       #infos {
-        #buttons {
-          padding: 10px;
-          margin-left: 1%;
-          margin-top: -10%;
-          /* position: relative; */
-          /* top: -116%; */
-          /* left: 53%; */
-          
+        margin-top: 25%;
+  
+        .buttonIcon {
+          border-radius: 50%;
+          border: none;
+          background-color: none;
+
           img {
-            width: 50%;
-            height: 90%;
+            padding: 5px;
+            width: 55px;
           }
-        };
+        }
+
+        .buttonIcon:active{
+          background-color: #BC0001;
+        }
+
+        img {
+          width: 50%;
+          height: 90%;
+        }
       };
     };
-  }
+  };
 `
