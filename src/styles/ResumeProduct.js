@@ -170,3 +170,20 @@ export const ResumeProduct = styled.section`
     };
   };
 `
+
+export const Notfound = styled.div`
+  background-color: #efebeb;
+  height: 85vh;
+
+  div {
+    display: flex;
+    background-color: white;
+    box-shadow: 0 2px 2px grey;
+    margin-left: 18%;
+    margin-right: 18%;
+    height: 50%;
+    margin-top: 5px;
+    justify-content: center;
+    align-items: center;
+  }
+`

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
-import { ProductCart } from '../styles/Card';
+import { BaseCart, Total, EmptyCart } from '../styles/Cart';
 import { Title } from '../styles/Headers';
 import trashWhite from '../images/cardIcons/trash.png';
+import { Link } from 'react-router-dom';
 
 function Cart() {
   const [itensCart, setItensCart] = useState([]);
@@ -34,22 +35,20 @@ function Cart() {
   }
 
   return(
-    <div className='color'>
-      { console.log(itensCart) }
+    <div className='color backgroundCart'>
       <Header />
       <Title> <h3> Carrinho </h3></Title>
+      <BaseCart>
       {
-        itensCart !== null
-          ?(<div>
+        itensCart.length !== 0
+          ? (<div>
             {
               itensCart.map((item) => (
-                <ProductCart>
-                  <img src={item.url} alt={item.name} />
-                  <div id='infos'>
-                    <h4>{item.name}</h4>
-                    <p>{item.price}</p>
-                  </div>
-                  <div id='buttons'>
+                <div id='itensCart'>
+                  <img src={item.url} alt={item.name} id='picture' />
+                  <h4>{item.name}</h4>
+                  <p>{item.price}</p>
+                  <div id='buttonTrash'>
                     <img
                       className='button'
                       src={ trashWhite }
@@ -59,14 +58,19 @@ function Cart() {
                       onClick={ removeItem }
                     />
                   </div>
-                </ProductCart>)
-              )
+                </div>
+              ))
             }
-            <p> Total: R${ total.toFixed(2) } </p>
+            <Total id='total'>
+              <p> Total: R${ total.toFixed(2) } </p>
+              <Link to='/'>
+                <button>Continuar comprando</button>
+              </Link>
+            </Total>
           </div>)
-          : <ProductCart>Carrinho vazio</ProductCart>
+          : <p id='emptyCart'> Carrinho vazio </p>
       }
-      <button>Continuar comprando</button>
+      </BaseCart>
     </div>
   );
 };

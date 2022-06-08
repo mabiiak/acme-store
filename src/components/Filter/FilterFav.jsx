@@ -3,7 +3,7 @@ import { Context } from '../../context/Provider';
 import { getLocalStorage } from '../../services/localStorage';
 import { Title } from '../../styles/Headers';
 import { Link } from 'react-router-dom';
-import { ResumeProduct } from "../../styles/ResumeProduct";
+import { ResumeProduct, Notfound } from "../../styles/ResumeProduct";
 import cart  from '../../images/cart.png';
 import heart from '../../images/heart.png';
 
@@ -91,7 +91,13 @@ function FilterFavCards() {
               ))
             }
           </ResumeProduct>
-          ) : (<p>Não há favoritos</p>)
+          ) : (
+            <Notfound>
+              <div>
+                <p>Não há favoritos</p>
+              </div>
+            </Notfound>
+          )
         }
     </div>
   )
