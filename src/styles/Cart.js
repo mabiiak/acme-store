@@ -14,7 +14,6 @@ export const BaseCart = styled.div`
   align-items: center;
 
   #itensCart {
-    background-color: #EFEDED;
     margin: 10px;
     padding: 10px;
     align-items: center;
@@ -81,10 +80,8 @@ export const BaseCart = styled.div`
   @media only screen and (max-width:400) {
     margin-left: 5%;
     margin-right: 5%;
-    padding: 5px;
 
     #itensCart {
-      width: 60%;
       flex-direction: column;
 
       #picture {
@@ -102,11 +99,11 @@ export const BaseCart = styled.div`
         margin-right: 3%;
       };
 
-    #buttonTrash img {
-      width: 40px;
-      height: 40px;
+      #buttonTrash img {
+        width: 40px;
+        height: 40px;
+      }
     }
-  }
   }
 `;
 
