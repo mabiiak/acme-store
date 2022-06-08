@@ -38,15 +38,19 @@ function InputFilter() {
         onChange={ handleText}
       />
 
-      <Icon
-        icon={ color }
-        color='white'
-        width="50"
-        height="50"
-        alt='icone de coração'
-        id='favorites'
-        onClick={ () => handleClick() }
-      />
+      <div id='buttonFav'>
+        <p>FAVORITOS</p>
+        <Icon
+          icon={ color }
+          color='BC0001'
+          width="25"
+          height="25"
+          alt='icone de coração'
+          id='favorites'
+          onClick={ () => handleClick() }
+        />
+      </div>
+
     </DivFilters>
   )
 }
