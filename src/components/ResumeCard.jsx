@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import { SectionProducts } from "../styles/Card";
+import { ResumeProduct } from "../styles/ResumeProduct";
 import heart from '../images/heart.png';
 import cart from '../images/cart.png';
 import redHeart from '../images/redHeart.png'
@@ -49,10 +49,10 @@ class ResumeCard extends React.Component {
   };
 
   render() {
-    let { list, prices, page } = this.props;
+    let { list, prices } = this.props;
 
     return (
-      <SectionProducts>
+      <ResumeProduct>
         {
           list.map((item, index) => (
             <div key={ item.name } className='card'>
@@ -60,38 +60,31 @@ class ResumeCard extends React.Component {
                 to={`/product/${item.name.toLowerCase().split(' ').join('_')}`}
               >
                 <img src={item.url} alt='imagem do produto'/>
-                <div>
-                  <h4>{ item.name }</h4>
-                  {
-                    page === 'fav'
-                    ? (<p> R$ { item.price } </p>)
-                    : list.length === 10
-                    && <p> R$ { prices[index] } </p>
-                  }
-                </div>
+                <h4>{ item.name }</h4>
               </Link>
-              <div className='buttons'>
-                <img
-                  src={ heart }
-                  alt='heart icon'
-                  className='button'
-                  name='heart'
-                  onClick={ this.handleClick }
-                  id={ item.name }
-                />
-                <img
-                  src={ cart }
-                  alt='cart icon'
-                  className='button'
-                  name='cart'
-                  onClick={ this.handleClick }
-                  id={ item.name }
-                />
+              <div id="infos">
+                { <p> R$ { prices[index] } </p> }
+                <div id='buttons'>
+                  <img
+                    src={ heart }
+                    alt='heart icon'
+                    name='heart'
+                    onClick={ this.handleClick }
+                    id={ item.name }
+                  />
+                  <img
+                    src={ cart }
+                    alt='cart icon'
+                    name='cart'
+                    onClick={ this.handleClick }
+                    id={ item.name }
+                  />
+                </div>
               </div>
             </div>
           ))
         }
-      </SectionProducts>
+      </ResumeProduct>
     )
   };
 };

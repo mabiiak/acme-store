@@ -6,7 +6,7 @@ import trashWhite from '../images/cardIcons/trash.png';
 
 function Cart() {
   const [itensCart, setItensCart] = useState([]);
-  let [total, setTotal] = useState(0);
+  const [total, setTotal] = useState(0);
 
   useEffect(() => {
     const itens = JSON.parse(localStorage.getItem('cart'));
@@ -35,6 +35,7 @@ function Cart() {
 
   return(
     <div className='color'>
+      { console.log(itensCart) }
       <Header />
       <Title> <h3> Carrinho </h3></Title>
       {
@@ -65,6 +66,7 @@ function Cart() {
           </div>)
           : <ProductCart>Carrinho vazio</ProductCart>
       }
+      <button>Continuar comprando</button>
     </div>
   );
 };

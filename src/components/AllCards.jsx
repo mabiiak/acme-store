@@ -8,7 +8,7 @@ function AllCards() {
 
   useEffect(() => {
     setTimeout(() => {
-      listProducts.map((item, i) => {
+      listProducts.map((item) => {
         const generatePrice = getPrice(item.name, item.description);
         return setPrice((oldValue) => [...oldValue, generatePrice]);
       })

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getLocalStorage } from '../../services/localStorage';
 import { Title } from '../../styles/Headers';
 import { Link } from 'react-router-dom';
-import { SectionProducts } from '../../styles/Card';
+import { ResumeProduct } from "../../styles/ResumeProduct";
 import cart  from '../../images/cart.png';
 import redHeart from '../../images/redHeart.png';
 
@@ -39,16 +39,16 @@ function FilterFavCards() {
       const removeItem = initialStorage.filter((item) => item.name !== id)
       localStorage.setItem(name, JSON.stringify([...removeItem]));
     }
-
   };
   
   return(
     <div>
       <Title><h3> Favoritos </h3></Title>
+      { console.log(researched) }
       {
-        researched !== null
-        && (
-          <SectionProducts>
+        researched.length !== 0
+        ? (
+          <ResumeProduct>
             {
               researched.map((item, index) => (
                 <div key={ item.name } className='card'>
@@ -85,9 +85,9 @@ function FilterFavCards() {
                 </div>
               ))
             }
-          </SectionProducts>
-        )}
-      { researched.length === 0 && <p>Não há favoritos</p> }
+          </ResumeProduct>
+          ) : (<p>Não há favoritos</p>)
+        }
     </div>
   )
 }

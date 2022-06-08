@@ -7,10 +7,9 @@
 }
 
 .home_color {
-  background: linear-gradient(180deg, #BC0001 400px, #f2f2f2 10%)
-}
+  background: linear-gradient(180deg, #800800 400px, #d4cbcb 10%)
+};
 
 .color {
-  background: linear-gradient(180deg, #BC0001 85px, #f2f2f2 10%)
-}
-
+  background: linear-gradient(180deg, #800800 400px, #d4cbcb 10%)
+};
