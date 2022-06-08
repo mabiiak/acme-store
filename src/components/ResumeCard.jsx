@@ -39,6 +39,7 @@ class ResumeCard extends React.Component {
 
     return (
       <ResumeProduct>
+        { console.log(list[0]) }
         {
           list.map((item, index) => (
             <div key={ item.name } className='card'>
@@ -48,7 +49,7 @@ class ResumeCard extends React.Component {
                 <img id='imgProduct' src={item.url} alt='imagem do produto'/>
                 <h4>{ item.name }</h4>
               </Link>
-                { <p> R$ { prices[index] } </p> }
+                { <p> R$ { item.price } </p> }
               <div id="infos">
                 <div id='buttons'>
                   <button className='buttonIcon'>

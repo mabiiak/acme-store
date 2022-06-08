@@ -28,6 +28,7 @@ function Home() {
       <Header />
       <InputFilter />
       { !filterName && filterFavorite === false && (<AllCards />) }
+      { console.log(filterName) }
       { filterName && (<FilterName />) }
       { filterFavorite === true && (<FilterFavCards />) }
     </div>

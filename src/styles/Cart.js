@@ -21,7 +21,7 @@ export const BaseCart = styled.div`
     margin-bottom: 30px;
     width: 80%;
 
-    img {
+    #picture {
       margin-right: 10px;
       width: 50%;
       height: 50%;
@@ -35,9 +35,9 @@ export const BaseCart = styled.div`
       margin-right: 5%;
     };
 
-    #buttonTrash {
-      width: 20%;
-      height: 20%;
+    #button {
+      width: 30%;
+      height: 30%;
     }
   }
 
@@ -92,7 +92,7 @@ export const BaseCart = styled.div`
       };
 
       h4{
-        margin-right: 3%;
+        margin-right: 5%;
       }
 
       p {

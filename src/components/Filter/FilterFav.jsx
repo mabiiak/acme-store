@@ -61,7 +61,7 @@ function FilterFavCards() {
                       <h4>{ item.name }</h4>
                       {
                         price.length === 10
-                        && <p> R$ { price[index] } </p>
+                        && <p> R$ { item.price } </p>
                       }
                     </div>
                   </Link>

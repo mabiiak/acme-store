@@ -14,7 +14,8 @@ function FilterName() {
   }, [filterName])
 
   return(
-    <ResumeCard list={ filtredProducts } />
+    filtredProducts.length
+      && ( <ResumeCard list={ filtredProducts } />)
   )
 }
 
