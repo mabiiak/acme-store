@@ -88,7 +88,7 @@ function ProductDetails() {
               </CardResume>
             </div>
           ))
-        };
+        }
       </div>
     </div>
   );
