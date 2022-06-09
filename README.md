@@ -1,15 +1,37 @@
 # ACME Store
 
-Esse projeto tem como intuito desenvolver uma loja virtual para uma empresa fictícia chamada Acme Inc., empresa que foca na venda de produtos geéricos.
+Esse projeto tem como intuito desenvolver uma loja virtual para uma empresa fictícia chamada Acme, empresa que foca na venda de produtos genéricos.
 
 ## Funções
-* Listar os produtos
-* Favoritar item
-* Filtrar por nome
-* Filtrar por favoritos
+* Gerar produtos com imagens e nomes aleatórios
+ <p align="center">
+    <img width="620" src="src/assets/home.gif"
+ </p>
+    
+* Filtrar produtos por nome
+ <p align="center">
+    <img width="620" src="src/assets/filtroName.gif"
+ </p>
+  
+* Adicionar produto aos favoritos
+* Filtrar favoritos
+* Remover itens dos favoritos
+  <p align="center">
+    <img width="620" src="src/assets/filtroFav.gif"
+  </p> 
+ 
 * Visualizar produto
-* Adicionar/remover do carrinho
-* Visualizar itens no carrinho antes de finalizar a compra
+    <p align="center">
+      <img width="620" src="src/assets/detailsPage.gif"
+    </p>
+ 
+* Adicionar produto ao carrinho
+* Visualizar produtos no carrinho
+* Somar preço dos produtos
+* Remover produto do carrinho e atualizar valores
+    <p align="center">
+      <img width="620" src="src/assets/cart.gif"
+    </p>
 
 ## Desenvolvimento
 Clone o projeto
