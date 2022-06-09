@@ -35,11 +35,10 @@ class ResumeCard extends React.Component {
   };
 
   render() {
-    let { list, prices } = this.props;
+    let { list } = this.props;
 
     return (
       <ResumeProduct>
-        { console.log(list[0]) }
         {
           list.map((item, index) => (
             <div key={ item.name } className='card'>
