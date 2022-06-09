@@ -35,18 +35,15 @@ Esse projeto tem como intuito desenvolver uma loja virtual para uma empresa fict
 
 ## Desenvolvimento
 Clone o projeto
-    `git@github.com:mabiiak/businessCaseHype.git`
+    `git@github.com:mabiiak/acme-store.git`
 
 
 Entre na pasta do repositório que você acabou de clonar
-    `cd business-case-hype`
+    `cd acme-store`
 
 
 Inicialize o projeto
     `npm start`
-
-## Testes
-`npm run test`
 
 ## Links
 API utilizada para gerar as imagens: [Lorem Picsum](https://picsum.photos/)
