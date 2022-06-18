@@ -21,7 +21,7 @@ function generateName() {
   const createAdjectives = [];
   const fullName = [];
 
-  for(let index = 0; index < 15; index += 1) {
+  for(let index = 0; index < 60; index += 1) {
     createVerbs.push(getVerbs());
     createAdjectives.push(getAdjectives());
   }
@@ -29,7 +29,7 @@ function generateName() {
   const verbs = [...new Set(createVerbs)];
   const adjectives = [...new Set(createAdjectives)];
 
-  for(let index = 0; index < 10; index += 1) {
+  for(let index = 0; index < 32; index += 1) {
     fullName.push(`${verbs[index]} ${adjectives[index]}`);
   }
 

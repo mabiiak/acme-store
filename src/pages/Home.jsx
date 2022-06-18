@@ -1,36 +1,31 @@
-import React, { useEffect, useContext, useState } from 'react';
-import { Context } from '../context/Provider'
+import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
-import AllCards from '../components/AllCards';
 import InputFilter from '../components/Filter/InputFilter';
-import FilterName from '../components/Filter/FilterName';
-import FilterFavCards from '../components/Filter/FilterFav';
+import Product from '../components/Product';
+import { ResumeProduct } from "../styles/ResumeProduct";
+import generateName from '../services/utils';
 
 function Home() {
-  const {
-    createPicturesAndNames,
-    createListDescriptions,
-    listProducts,
-    filterName,
-    filterFavorite,
-  } = useContext(Context);
-
-  const [picturesAndNames, setPicturesAndNames] = useState({});
+  const [names, setNames] = useState([]);
 
   useEffect(() => {
-    if(listProducts.length === 0) return setPicturesAndNames(createPicturesAndNames());
+    setNames((oldNames) => generateName())
   }, []);
-
-  useEffect(() => { createListDescriptions() }, [picturesAndNames, setPicturesAndNames]);
 
   return(
     <div className='home_color'>
       <Header />
       <InputFilter />
-      { !filterName && filterFavorite === false && (<AllCards />) }
+
+      <ResumeProduct>
+        { names.length !== 0 &&
+          names.map((name, index) => (<Product key={ index } name={ name }/>))
+        }
+      </ResumeProduct>
+      {/* { !filterName && filterFavorite === false && (<AllCards />) }
       { console.log(filterName) }
       { filterName && (<FilterName />) }
-      { filterFavorite === true && (<FilterFavCards />) }
+      { filterFavorite === true && (<FilterFavCards />) } */}
     </div>
   );
 };

@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import heart from '../images/heart.png';
 import cart from '../images/cart.png';
 import { CardResume } from '../styles/Card';
+import { connect } from 'react-redux';
 
 function ProductDetails() {
   const { id } = useParams();
@@ -94,4 +95,8 @@ function ProductDetails() {
   );
 };
 
-export default ProductDetails;
+const mapStateToProps = state => ({
+  listProds: state.list.state
+})
+
+export default connect(mapStateToProps, null)(ProductDetails) ;
